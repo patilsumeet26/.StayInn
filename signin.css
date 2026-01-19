@@ -1,0 +1,417 @@
+/* ===== SIGN IN PAGE STYLES ===== */
+.signin-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+}
+
+.signin-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+}
+
+/* ===== SIGNIN WRAPPER ===== */
+.signin-wrapper {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-dark);
+    overflow: hidden;
+}
+
+.signin-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d2d44 100%);
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+}
+
+.signin-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.signin-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+/* ===== TABS ===== */
+.signin-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-button:hover {
+    background-color: var(--light-bg);
+}
+
+.tab-button.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.tab-button i {
+    margin-right: 8px;
+}
+
+/* ===== FORMS ===== */
+.signin-form {
+    display: none;
+    padding: 30px;
+    animation: fadeIn 0.3s ease;
+}
+
+.signin-form.active-form {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.form-group-signin {
+    margin-bottom: 20px;
+}
+
+.form-group-signin label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group-signin input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group-signin input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.form-group-signin small {
+    display: block;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.error-text {
+    display: block;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* ===== PASSWORD INPUT ===== */
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--accent-color);
+}
+
+/* ===== REMEMBER & FORGOT ===== */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.remember-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.remember-checkbox input {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: var(--accent-color);
+}
+
+/* ===== TERMS ===== */
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.terms-checkbox input {
+    width: auto;
+    margin: 5px 0 0 0;
+    cursor: pointer;
+}
+
+/* ===== BUTTONS ===== */
+.btn-signin-submit {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-signin-submit:hover {
+    background-color: #a01729;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.4);
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    background: var(--white);
+    padding: 0 10px;
+}
+
+/* ===== GUEST BUTTON ===== */
+.btn-guest {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-guest:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* ===== SIGNIN ILLUSTRATION ===== */
+.signin-illustration {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d2d44 100%);
+    border-radius: 10px;
+    padding: 50px 30px;
+    color: var(--white);
+    text-align: center;
+    box-shadow: var(--shadow-dark);
+}
+
+.illustration-content i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.illustration-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.illustration-content p {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.features-list {
+    list-style: none;
+    text-align: left;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.features-list i {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .signin-container {
+        gap: 30px;
+    }
+
+    .signin-illustration {
+        padding: 40px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .signin-container {
+        grid-template-columns: 1fr;
+    }
+
+    .signin-illustration {
+        display: none;
+    }
+
+    .signin-wrapper {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .signin-tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        text-align: center;
+        border-bottom: none !important;
+        border-right: 3px solid transparent;
+        margin: 0 -2px 0 0;
+    }
+
+    .tab-button.active {
+        border-right-color: var(--secondary-color);
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .signin-section {
+        padding: 20px 10px;
+    }
+
+    .signin-header {
+        padding: 20px;
+    }
+
+    .signin-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .signin-form {
+        padding: 20px;
+    }
+
+    .form-group-signin label {
+        font-size: 0.9rem;
+    }
+
+    .form-group-signin input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .features-list li {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+}

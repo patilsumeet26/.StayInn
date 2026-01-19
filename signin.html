@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - StayInn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="signin-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-hotel"></i>
+                    <span>StayInn</span>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                    <li><a href="dining.html" class="nav-link">Dining</a></li>
+                    <li><a href="my-bookings.html" class="nav-link">My Booking</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <a href="signin.html" class="btn-signin">Sign In</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign In Container -->
+    <section class="signin-section">
+        <div class="signin-container">
+            <div class="signin-wrapper">
+                <div class="signin-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to access your bookings and account</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="signin-tabs">
+                    <button class="tab-button active" data-tab="login">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                    <button class="tab-button" data-tab="register">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form class="signin-form active-form" id="loginForm" data-tab="login">
+                    <div class="form-group-signin">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                        <span class="error-text"></span>
+                    </div>
+
+                    <div class="form-group-signin">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('loginPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-text"></span>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label class="remember-checkbox">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-signin-submit">Sign In</button>
+
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+
+                    <button type="button" class="btn-guest" onclick="continueAsGuest()">
+                        <i class="fas fa-user"></i> Continue as Guest
+                    </button>
+                </form>
+
+                <!-- Register Form -->
+                <form class="signin-form" id="registerForm" data-tab="register">
+                    <div class="form-group-signin">
+                        <label for="regName">Full Name</label>
+                        <input type="text" id="regName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group-signin">
+                        <label for="regEmail">Email Address</label>
+                        <input type="email" id="regEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group-signin">
+                        <label for="regPhone">Phone Number</label>
+                        <input type="tel" id="regPhone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group-signin">
+                        <label for="regPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="regPassword" placeholder="Create a password" required>
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('regPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <small>At least 8 characters</small>
+                    </div>
+
+                    <div class="form-group-signin">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" id="regConfirmPassword" placeholder="Confirm your password" required>
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('regConfirmPassword')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <label class="terms-checkbox">
+                        <input type="checkbox" id="regTerms" required>
+                        <span>I agree to the terms and conditions</span>
+                    </label>
+
+                    <button type="submit" class="btn-signin-submit">Create Account</button>
+                </form>
+            </div>
+
+            <!-- Side Illustration -->
+            <div class="signin-illustration">
+                <div class="illustration-content">
+                    <i class="fas fa-hotel"></i>
+                    <h2>StayInn</h2>
+                    <p>Experience Luxury Like Never Before</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Easy Booking</li>
+                        <li><i class="fas fa-check-circle"></i> Premium Rooms</li>
+                        <li><i class="fas fa-check-circle"></i> World-Class Service</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StayInn</h3>
+                <p>Your gateway to luxury hospitality and unforgettable experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StayInn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/signin.js"></script>
+</body>
+</html>

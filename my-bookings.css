@@ -1,0 +1,234 @@
+/* ===== MY BOOKINGS PAGE STYLES ===== */
+.my-bookings-section {
+    padding: 60px 20px;
+    background: var(--light-bg);
+    min-height: 70vh;
+}
+
+.bookings-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.no-bookings {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.no-bookings i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.no-bookings h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.no-bookings p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* ===== BOOKING CARD ===== */
+.booking-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-dark);
+}
+
+.booking-card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d2d44 100%);
+    color: var(--white);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-id {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.booking-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.booking-status.confirmed {
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+.booking-status.pending {
+    background-color: rgba(255, 193, 7, 0.3);
+    color: #FFC107;
+}
+
+.booking-status.cancelled {
+    background-color: rgba(244, 67, 54, 0.3);
+    color: #f44336;
+}
+
+.booking-card-body {
+    padding: 20px;
+}
+
+.booking-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.booking-info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-info-label {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.booking-info-value {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.booking-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: var(--light-bg);
+    border-radius: 5px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.booking-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.btn-modify {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-modify:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-cancel-booking {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-cancel-booking:hover {
+    background-color: #a01729;
+}
+
+.btn-download {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-download:hover {
+    background-color: #b8941b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .booking-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .booking-status {
+        align-self: flex-end;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .my-bookings-section {
+        padding: 30px 10px;
+    }
+
+    .booking-card-body {
+        padding: 15px;
+    }
+
+    .booking-id {
+        font-size: 1rem;
+    }
+
+    .booking-info-value {
+        font-size: 0.9rem;
+    }
+
+    .booking-total {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayInn - Luxury Hotel Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-hotel"></i>
+                    <span>StayInn</span>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="pages/rooms.html" class="nav-link">Rooms</a></li>
+                    <li><a href="pages/dining.html" class="nav-link">Dining</a></li>
+                    <li><a href="pages/my-bookings.html" class="nav-link">My Booking</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <a href="pages/signin.html" class="btn-signin">Sign In</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to StayInn</h1>
+            <p class="hero-subtitle">Experience Luxury and Comfort Like Never Before</p>
+            
+            <!-- Booking Form -->
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter location" value="Kalburgi, Karnataka">
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin">
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5+ Guests</option>
+                    </select>
+                </div>
+                <button class="btn-search" onclick="searchRooms()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2>What Our Guests Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"An absolutely magnificent stay! The staff was incredibly attentive, and the room was luxuriously appointed. I felt like royalty!"</p>
+                    <p class="review-author">- Sarah Johnson</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The Presidential Suite exceeded all expectations. The view, the amenities, the service - everything was perfect. Highly recommended!"</p>
+                    <p class="review-author">- Michael Chen</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Best hotel experience I've had! The dining was exquisite, the spa was relaxing, and the entire staff made us feel welcome."</p>
+                    <p class="review-author">- Emily Rodriguez</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Impeccable service and world-class amenities. This is the perfect destination for a romantic getaway. Will definitely return!"</p>
+                    <p class="review-author">- David Thompson</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Stayed here with my family and we loved every minute. Kids had a blast at the pool, and parents enjoyed the spa. Unforgettable!"</p>
+                    <p class="review-author">- Jessica Williams</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Hero Section -->
+    <section class="hero-banner">
+        <div class="banner-content">
+            <h2>Your Perfect Getaway Awaits</h2>
+            <p>Discover Luxury, Comfort, and Unforgettable Experiences</p>
+            <a href="pages/rooms.html" class="btn-primary">Book Now</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StayInn</h3>
+                <p>Your gateway to luxury hospitality and unforgettable experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="pages/rooms.html">Rooms</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StayInn. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

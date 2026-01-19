@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Room - StayInn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-hotel"></i>
+                    <span>StayInn</span>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                    <li><a href="dining.html" class="nav-link">Dining</a></li>
+                    <li><a href="my-bookings.html" class="nav-link">My Booking</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <a href="signin.html" class="btn-signin">Sign In</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Complete Your Booking</h1>
+        <p>Enter Your Details to Confirm Reservation</p>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Booking Summary -->
+                <div class="booking-summary">
+                    <h2>Booking Summary</h2>
+                    <div id="summaryContent"></div>
+                </div>
+
+                <!-- Guest Form -->
+                <form class="booking-form" id="guestForm">
+                    <h2>Guest Information</h2>
+                    
+                    <div class="form-group-booking">
+                        <label for="guestName">Full Name *</label>
+                        <input type="text" id="guestName" required placeholder="Enter your full name">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group-booking">
+                        <label for="guestEmail">Email Address *</label>
+                        <input type="email" id="guestEmail" required placeholder="Enter your email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group-booking">
+                        <label for="guestPhone">Phone Number *</label>
+                        <input type="tel" id="guestPhone" required placeholder="Enter your phone number">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group-booking">
+                        <label for="specialRequests">Special Requests</label>
+                        <textarea id="specialRequests" rows="4" placeholder="Enter any special requests..."></textarea>
+                    </div>
+
+                    <h2>Payment Method</h2>
+                    
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="credit-card" checked>
+                            <span>Credit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="debit-card">
+                            <span>Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="upi">
+                            <span>UPI</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="net-banking">
+                            <span>Net Banking</span>
+                        </label>
+                    </div>
+
+                    <!-- Card Details -->
+                    <div id="cardDetails" class="card-details">
+                        <div class="form-group-booking">
+                            <label for="cardName">Cardholder Name *</label>
+                            <input type="text" id="cardName" placeholder="Name on card">
+                        </div>
+
+                        <div class="form-group-booking">
+                            <label for="cardNumber">Card Number *</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group-booking">
+                                <label for="expiry">Expiry Date *</label>
+                                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group-booking">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" id="terms" required>
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-confirm-booking">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content confirmation-content">
+            <div class="confirmation-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+            </div>
+            <div id="confirmationDetails" class="confirmation-details"></div>
+            <div class="confirmation-actions">
+                <button class="btn-primary" onclick="goToMyBookings()">View My Bookings</button>
+                <button class="btn-secondary" onclick="goHome()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StayInn</h3>
+                <p>Your gateway to luxury hospitality and unforgettable experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StayInn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/booking.js"></script>
+</body>
+</html>
